@@ -38,7 +38,6 @@ Install dependencies
 
 ```
 npm install
-
 ```
 
 Run nodemon from the directory
