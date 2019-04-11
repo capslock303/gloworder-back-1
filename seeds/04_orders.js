@@ -7,44 +7,32 @@ exports.seed = (knex) => {
         [
           {
             id: 1,
-            drinks: "Whiskey",
-            options: "Neat",
-            total: "50",
+            drink_order: "{1:2}",
+            total: 8.0,
             paid: false,
             user_id: 5
           },
           {
             id: 2,
-            drinks: "Tequila",
-            options: "With a twist",
-            total: "50",
+            drink_order: "{2:1, 3:1}",
+            total: 17.5,
             paid: true,
             user_id: 4
           },
           {
             id: 3,
-            drinks: "Whiskey",
-            options: "Neat",
-            total: "50",
+            drink_order: "{4:1}",
+            total: 3.5,
             paid: false,
             user_id: 3
           },
           {
             id: 4,
-            drinks: "Rum",
-            options: "Neat",
-            total: "50",
+            drink_order: "{5:1,6:2}",
+            total: 11.0,
             paid: false,
             user_id: 2
           },
-          {
-            id: 5,
-            drinks: "Vodka",
-            options: "On the rocks",
-            total: "50",
-            paid: true,
-            user_id: 1
-          }
         ]
       )
     })
