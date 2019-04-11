@@ -3,7 +3,7 @@ exports.up = function (knex, Promise) {
     table.increments('id')
     table.string('firstName', '255').notNullable()
     table.string('lastName', '255').notNullable()
-    table.string('phone', '10').notNullable()
+    table.string('phone', '255').notNullable()
     table.string('email', '255').notNullable()
     table.string('hashedPassword', '255').notNullable()
     table.string('DOB', '15').notNullable()

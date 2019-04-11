@@ -3,7 +3,7 @@ exports.up = function (knex, Promise) {
     table.increments('id')
     table.string('drinks', '255').notNullable()
     table.string('options', '255').notNullable()
-    table.integer('total', '10').notNullable()
+    table.integer('total', '255').notNullable()
     table.boolean('paid', '255').notNullable()
     
     table.integer('user_id').references('users.id').onDelete('CASCADE')
