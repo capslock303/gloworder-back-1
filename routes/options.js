@@ -1,10 +1,11 @@
 var express = require('express')
 var router = express.Router()
+const knex = require('../knex.js')
 
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  res.sendStatus(200)
+  knex('options').select('*').then(data => res.status(200).json(data))
 })
 
 //Read (get one of the resource)
