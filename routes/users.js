@@ -14,7 +14,6 @@ router.get('/', function (req, res, next) {
 //Read (get one of the resource)
 router.get('/:id', function (req, res, next) {
   const id = req.params.id
-
   knex('users')
     .first('*')
     .where({ id })

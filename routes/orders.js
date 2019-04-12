@@ -21,24 +21,12 @@ router.get('/:id', function (req, res, next) {
 
 //Create (create one of the resource)
 router.post('/', async(req, res, next)=> {
-  const drinks = JSON.parse(req.body.drinks)
-  console.log("inside POST orders:  ")
-  console.log("req.body:  ", req.body, '\n')
-  let drink_order = await drinks.map(drink=>{
-    return knex('drink_options')
-            .insert({
-              drink_id: drink.drinkId,
-              option_id: drink.optionId,
-              price: drink.price
-            }.then(drink_option => drink_option[0]))
-  })
-  console.log("drink_order: ", drink_order)
-  const total = drink_order.reduce((sum, drink) => sum + drink.price , 0)
+  
   knex('orders')
     .insert({
-      drink_order: String(drink_order),
+      drink_order: req.body.drinkOrder,
       color: req.body.color,
-      total: total,
+      total: req.body.total,
       paid: false,
       user_id: req.body.userId,
     }, '*')
