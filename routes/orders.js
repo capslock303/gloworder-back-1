@@ -1,31 +1,65 @@
 var express = require('express')
 var router = express.Router()
-
+const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  res.sendStatus(200)
+  knex('orders')
+    .select('*')
+    .then(data => res.status(200).json(data))  
 })
 
 //Read (get one of the resource)
 router.get('/:id', function (req, res, next) {
-  res.status(200).send(req.params.id)
+  const id = req.params.id
+  knex('orders')
+    .select('*')
+    .where({ id })
+    .first()
+    .then(order => res.status(200).json(order))
 })
 
 //Create (create one of the resource)
-router.post('/', function (req, res, next) {
-  res.status(200).send("success!")
+router.post('/', async(req, res, next)=> {
+  
+  knex('orders')
+    .insert({
+      drink_order: req.body.drinkOrder,
+      color: req.body.color,
+      total: req.body.total,
+      paid: false,
+      user_id: req.body.userId,
+    }, '*')
+    .then((order) => {
+      res.status(200).json(order[0])
+    })
 })
 
 //Update (update one of the resource)
 router.patch('/:id', function (req, res, next) {
-  let result = { id: req.params.id, name: req.body.name }
-  res.status(200).send(result)
+  knex('orders')
+  .update({
+    color: req.body.color,
+    total: req.body.total,
+    paid: req.body.paid,
+    user_id: req.body.userId,
+  }, '*')
+  .then((order) => {
+    res.status(200).json(order[0])
+  })
 })
 
 //Delete (delete one of the resource)
 router.delete('/:id', function (req, res, next) {
-  res.status(200).send(req.params.id)
+  knex('orders')
+    .where({
+      id : req.params.id
+    })
+    .del()
+    .returning('*')
+    .then(deleted=>{
+      res.status(200).send(deleted[0])
+    })
 })
 
 module.exports = router;
