@@ -1,6 +1,8 @@
-var express = require('express')
-var router = express.Router()
+const express = require('express')
 const knex = require('../knex.js')
+
+const router = express.Router()
+
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
