@@ -7,8 +7,8 @@ exports.seed = (knex) => {
         [
           {
             id: 1,
-            firstName: "Phillip",
-            lastName: "Borgenicht",
+            first_name: "Phillip",
+            last_name: "Borgenicht",
             phone: "111-111-1111",
             email: "pborgenicht@gmail.com",
             password: "password",
@@ -16,8 +16,8 @@ exports.seed = (knex) => {
           },
           {
             id: 2,
-            firstName: "Dustin",
-            lastName: "Huth",
+            first_name: "Dustin",
+            last_name: "Huth",
             phone: "222-222-2222",
             email: "dhuth@gmail.com",
             password: "password",
@@ -25,8 +25,8 @@ exports.seed = (knex) => {
           },
           {
             id: 3,
-            firstName: "Seth",
-            lastName: "Brown",
+            first_name: "Seth",
+            last_name: "Brown",
             phone: "333-333-3333",
             email: "sbrown@gmail.com",
             password: "password",
@@ -34,8 +34,8 @@ exports.seed = (knex) => {
           },
           {
             id: 4,
-            firstName: "Kevin",
-            lastName: "Ziechmann",
+            first_name: "Kevin",
+            last_name: "Ziechmann",
             phone: "444-444-4444",
             email: "kziechmann@gmail.com",
             password: "password",
@@ -43,8 +43,8 @@ exports.seed = (knex) => {
           },
           {
             id: 5,
-            firstName: "Jake",
-            lastName: "Mosher",
+            first_name: "Jake",
+            last_name: "Mosher",
             phone: "555-555-5555",
             email: "jmosher@gmail.com",
             password: "password",
