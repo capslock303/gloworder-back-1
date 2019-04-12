@@ -5,13 +5,14 @@ const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  knex('options')
+  return knex('options')
     .select('*')
     .then(data => res.status(200).json(data))
 })
+
 router.get('/:id', function (req, res, next) {
   const id = req.params.id
-  knex('options')
+  return knex('options')
     .first('*')
     .where({ id })
     .then(options => res.status(200).json(options))

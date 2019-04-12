@@ -5,15 +5,19 @@ const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  knex('drink_options')
+  return knex('drink_options')
   .select('*')
   .then(data => res.status(200).json(data))
 })
 
 //Read (get one of the resource)
-// router.get('/:id', function (req, res, next) {
-//   res.status(200).send(req.params.id)
-// })
+router.get('/:id', function (req, res, next) {
+  const id = req.params.id
+  return knex('drink_options')
+    .first('*')
+    .where({ id })
+    .then(options => res.status(200).json(options))
+})
 
 //Create (create one of the resource)
 router.post('/', function (req, res, next) {

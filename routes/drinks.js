@@ -5,7 +5,7 @@ const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  knex('drinks')
+  return knex('drinks')
     .select('*')
     .then(data => res.status(200).json(data))
 })
@@ -14,7 +14,7 @@ router.get('/', function (req, res, next) {
 router.get('/:id', function (req, res, next) {
   const id = req.params.id
 
-  knex('drinks')
+  return knex('drinks')
     .first('*')
     .where({ id })
     .then(drinks => res.status(200).json(drinks))
