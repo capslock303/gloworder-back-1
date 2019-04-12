@@ -20,7 +20,7 @@ router.get('/:id', function (req, res, next) {
 })
 
 //Create (create one of the resource)
-router.post('/', function async(req, res, next) {
+router.post('/', async(req, res, next)=> {
   const drinks = req.body.drinks
   console.log("inside POST orders:  ", req.body, '\n')
   console.log("req.body:  ", req.body, '\n')
