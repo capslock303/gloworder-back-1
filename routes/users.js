@@ -24,7 +24,6 @@ router.get('/:id', function (req, res, next) {
 
 //Create (create one of the resource)
 router.post('/', function (req, res, next) {
-  const hash = bcrypt.hashSync(req.body.password, 10)
 
   return knex('users')
     .insert({
@@ -32,10 +31,10 @@ router.post('/', function (req, res, next) {
       lastName: req.body.lastName,
       phone: req.body.phone,
       email: req.body.email,
-      hashedPassword: hash,
+      hashedPassword: bcrypt.hashSync(req.body.password, 10),
       DOB: req.body.DOB,
     }, '*')
-    .then(user => res.status(200).json(user))
+    .then(user => res.status(200).json(user[0]))
 })
 
 //Update (update one of the resource)
