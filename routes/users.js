@@ -24,8 +24,8 @@ router.get('/:id', function (req, res, next) {
 router.post('/', function (req, res, next) {
   return knex('users')
     .insert({
-      firstName: req.body.firstName,
-      lastName: req.body.lastName,
+      first_name: req.body.firstName,
+      last_name: req.body.lastName,
       phone: req.body.phone,
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 10),
@@ -34,8 +34,8 @@ router.post('/', function (req, res, next) {
     .then((user) => {
       res.status(200).json({
         id: user[0].id,
-        firstName: user[0].firstName,
-        lastName: user[0].lastName,
+        first_name: user[0].firstName,
+        last_name: user[0].lastName,
         email: user[0].email
       })
     })
@@ -73,7 +73,12 @@ router.delete('/:id', function (req, res, next) {
   return knex('users')
     .where({ id })
     .del('*')
-    .then(user => res.status(200).json(user[0]))
+    .then(user => res.status(200).json({
+      id: user[0].id,
+      firstName: user[0].first_name,
+      lastName: user[0].last_name,
+      email: user[0].email
+    }))
 })
 
 module.exports = router

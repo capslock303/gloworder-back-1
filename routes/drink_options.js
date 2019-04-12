@@ -6,14 +6,19 @@ const knex = require('../knex.js')
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
   knex('drink_options')
-  .select('*')
-  .then(data => res.status(200).json(data))
+    .select('*')
+    .then(data => res.status(200).json(data))
 })
 
 //Read (get one of the resource)
-// router.get('/:id', function (req, res, next) {
-//   res.status(200).send(req.params.id)
-// })
+router.get('/:id', function (req, res, next) {
+  const id = req.params.id
+  
+  knex('options')
+    .first('*')
+    .where({ id })
+    .then(option => res.status(200).json(option))
+})
 
 //Create (create one of the resource)
 router.post('/', function (req, res, next) {
@@ -44,6 +49,7 @@ router.patch('/:id', function (req, res, next) {
 //Delete (delete one of the resource)
 router.delete('/:id', function (req, res, next) {
   const id = req.params.id
+
   return knex('drink_options')
     .where({ id })
     .del('*')
