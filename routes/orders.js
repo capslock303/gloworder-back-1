@@ -21,13 +21,13 @@ router.get('/:id', function (req, res, next) {
 
 //Create (create one of the resource)
 router.post('/', async(req, res, next)=> {
-  const drinks = req.body.drinks
-  console.log("inside POST orders:  ", req.body, '\n')
+  const drinks = JSON.parse(req.body.drinks)
+  console.log("inside POST orders:  ")
   console.log("req.body:  ", req.body, '\n')
   let drink_order = await drinks.map(drink=>{
     return knex('drink_options')
             .insert({
-              drink_id: drink.id,
+              drink_id: drink.drinkId,
               option_id: drink.optionId,
               price: drink.price
             }.then(drink_option => drink_option[0]))
