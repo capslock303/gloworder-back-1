@@ -45,7 +45,12 @@ router.patch('/:id', function (req, res, next) {
 
 //Delete (delete one of the resource)
 router.delete('/:id', function (req, res, next) {
-  res.status(200).send(req.params.id)
+  const id = req.params.id
+
+  return knex('users')
+    .where({ id })
+    .del('*')
+    .then(user => res.status(200).json(user[0]))
 })
 
 module.exports = router;
