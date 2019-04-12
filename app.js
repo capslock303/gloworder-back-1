@@ -10,7 +10,8 @@ var usersRouter = require('./routes/users')
 var ordersRouter = require('./routes/orders')
 var drinksRouter = require('./routes/drinks')
 var optionsRouter = require('./routes/options')
-var drinkOrdersRouter = require('./routes/drink_orders')
+var drinkOptionsRouter = require('./routes/drink_options')
+var tokenRouter = require('./routes/token')
 
 var app = express()
 
@@ -25,7 +26,8 @@ app.use('/users', usersRouter)
 app.use('/orders', ordersRouter)
 app.use('/drinks', drinksRouter)
 app.use('/options', optionsRouter)
-app.use('/drink_orders', drinkOrdersRouter)
+app.use('/drink_options', drinkOptionsRouter)
+app.use('/token', tokenRouter)
 
 // Error handling for not found route
 app.use((req, res, next) => {
