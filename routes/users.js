@@ -31,16 +31,28 @@ router.post('/', function (req, res, next) {
       lastName: req.body.lastName,
       phone: req.body.phone,
       email: req.body.email,
-      hashedPassword: bcrypt.hashSync(req.body.password, 10),
-      DOB: req.body.DOB,
+      password: bcrypt.hashSync(req.body.password, 10),
+      DOB: req.body.DOB
     }, '*')
     .then(user => res.status(200).json(user[0]))
 })
 
 //Update (update one of the resource)
 router.patch('/:id', function (req, res, next) {
-  let result = { id: req.params.id, name: req.body.name }
-  res.status(200).send(result)
+  const id = req.params.id
+
+  return knex('users')
+    .where({ id })
+    .update({
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      phone: req.body.phone,
+      email: req.body.email,
+      password: bcrypt.hashSync(req.body.password, 10),
+      DOB: req.body.DOB
+    }, '*')
+    .then(user => res.status(200).json(user[0]))
+
 })
 
 //Delete (delete one of the resource)
