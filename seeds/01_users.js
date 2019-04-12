@@ -11,7 +11,7 @@ exports.seed = (knex) => {
             lastName: "Borgenicht",
             phone: "111-111-1111",
             email: "pborgenicht@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1979"
           },
           {
@@ -20,7 +20,7 @@ exports.seed = (knex) => {
             lastName: "Huth",
             phone: "222-222-2222",
             email: "dhuth@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1989"
           },
           {
@@ -29,7 +29,7 @@ exports.seed = (knex) => {
             lastName: "Brown",
             phone: "333-333-3333",
             email: "sbrown@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1969"
           },
           {
@@ -38,7 +38,7 @@ exports.seed = (knex) => {
             lastName: "Ziechmann",
             phone: "444-444-4444",
             email: "kziechmann@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1949"
           },
           {
@@ -47,7 +47,7 @@ exports.seed = (knex) => {
             lastName: "Mosher",
             phone: "555-555-5555",
             email: "jmosher@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1849"
           }
         ]
