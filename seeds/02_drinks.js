@@ -7,23 +7,28 @@ exports.seed = (knex) => {
         [
           {
             id: 1,
-            liquor: "Vodka"
+            liquor: "Vodka",
+            price: 3.5
           },
           {
             id: 2,
-            liquor: "Whiskey"
+            liquor: "Whiskey",
+            price: 4.0
           },
           {
             id: 3,
-            liquor: "Tequila"
+            liquor: "Tequila",
+            price: 4.0
           },
           {
             id: 4,
-            liquor: "Rum"
+            liquor: "Rum",
+            price: 3.5
           },
           {
             id: 5,
-            liquor: "Gin"
+            liquor: "Gin",
+            price: 4.0
           }
         ]
       )

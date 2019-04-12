@@ -9,36 +9,36 @@ exports.seed = (knex) => {
             id: 1,
             firstName: "Phillip",
             lastName: "Borgenicht",
-            phone: "555-555-5555",
+            phone: "111-111-1111",
             email: "pborgenicht@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1979"
           },
           {
             id: 2,
             firstName: "Dustin",
             lastName: "Huth",
-            phone: "555-555-5555",
+            phone: "222-222-2222",
             email: "dhuth@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1989"
           },
           {
             id: 3,
             firstName: "Seth",
             lastName: "Brown",
-            phone: "555-555-5555",
+            phone: "333-333-3333",
             email: "sbrown@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1969"
           },
           {
             id: 4,
             firstName: "Kevin",
             lastName: "Ziechmann",
-            phone: "555-555-5555",
+            phone: "444-444-4444",
             email: "kziechmann@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1949"
           },
           {
@@ -47,7 +47,7 @@ exports.seed = (knex) => {
             lastName: "Mosher",
             phone: "555-555-5555",
             email: "jmosher@gmail.com",
-            hashedPassword: "hashedPassword",
+            password: "password",
             DOB: "01/01/1849"
           }
         ]
