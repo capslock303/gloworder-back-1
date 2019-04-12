@@ -7,19 +7,25 @@ const router = express.Router()
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  knex('users').select('*').then(data => res.status(200).json(data))
+  knex('users')
+    .select('*')
+    .then(data => res.status(200).json(data))
 })
 
 //Read (get one of the resource)
 router.get('/:id', function (req, res, next) {
-  res.status(200).send(req.params.id)
+  const id = req.params.id
+
+  knex('users')
+    .first('*') // Same as .select but return obj rather than obj in arr
+    .where({ id })
+    .then(data => res.status(200).json(data))
 })
 
 //Create (create one of the resource)
 router.post('/', function (req, res, next) {
-  // async await needed to ensure password is hashed before posting?
   const hash = bcrypt.hashSync(req.body.password, 10)
-  
+
   return knex('users')
     .insert({
       firstName: req.body.firstName,
