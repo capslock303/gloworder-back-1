@@ -17,7 +17,7 @@ router.get('/:id', function (req, res, next) {
   const id = req.params.id
 
   knex('users')
-    .first('*') // Same as .select but return obj rather than obj in arr
+    .first('*')
     .where({ id })
     .then(data => res.status(200).json(data))
 })
@@ -65,4 +65,4 @@ router.delete('/:id', function (req, res, next) {
     .then(user => res.status(200).json(user[0]))
 })
 
-module.exports = router;
+module.exports = router
