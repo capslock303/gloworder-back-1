@@ -5,29 +5,50 @@ const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  knex('drinks').select('*').then(data => res.status(200).json(data))
-  
+  knex('drinks')
+    .select('*')
+    .then(data => res.status(200).json(data))
 })
 
 //Read (get one of the resource)
 router.get('/:id', function (req, res, next) {
-  res.status(200).send(req.params.id)
+  const id = req.params.id
+
+  knex('drinks')
+    .first('*')
+    .where({ id })
+    .then(drinks => res.status(200).json(drinks))
 })
 
 //Create (create one of the resource)
 router.post('/', function (req, res, next) {
-  res.status(200).send("success!")
+  return knex('drinks')
+    .insert({
+      liquor: req.body.liquor,
+      price: req.body.price
+    }, '*')
+    .then(drink => res.status(200).json(drink[0]))
 })
 
 //Update (update one of the resource)
 router.patch('/:id', function (req, res, next) {
-  let result = { id: req.params.id, name: req.body.name }
-  res.status(200).send(result)
+  const id = req.params.id
+
+  return knex('drinks')
+    .where({ id })
+    .update(req.body, '*')
+    .then(drink => res.status(200).json(drink[0]))
+
 })
 
 //Delete (delete one of the resource)
 router.delete('/:id', function (req, res, next) {
-  res.status(200).send(req.params.id)
+  const id = req.params.id
+
+  return knex('drinks')
+    .where({ id })
+    .del('*')
+    .then(drink => res.status(200).json(drink[0]))
 })
 
 module.exports = router;
