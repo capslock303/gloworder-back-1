@@ -4,7 +4,6 @@ const bcrypt = require('bcryptjs')
 
 const router = express.Router()
 
-
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
   knex('users')
