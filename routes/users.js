@@ -37,7 +37,8 @@ router.post('/', function (req, res, next) {
       phone: req.body.phone,
       email: req.body.email || "blank@blank.com",
       password: bcrypt.hashSync(req.body.password, 10),
-      DOB: req.body.DOB
+      DOB: req.body.DOB,
+      is_server: req.body.isServer || false,
     }, '*')
     .then((user) => {
       res.status(200).json({

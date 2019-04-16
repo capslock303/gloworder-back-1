@@ -12,7 +12,8 @@ exports.seed = (knex) => {
             phone: "111-111-1111",
             email: "pborgenicht@gmail.com",
             password: "password",
-            DOB: "01/01/1979"
+            DOB: "01/01/1979",
+            is_server: false,
           },
           {
             id: 2,
@@ -21,7 +22,8 @@ exports.seed = (knex) => {
             phone: "222-222-2222",
             email: "dhuth@gmail.com",
             password: "password",
-            DOB: "01/01/1989"
+            DOB: "01/01/1989",
+            is_server: false,
           },
           {
             id: 3,
@@ -30,7 +32,8 @@ exports.seed = (knex) => {
             phone: "333-333-3333",
             email: "sbrown@gmail.com",
             password: "password",
-            DOB: "01/01/1969"
+            DOB: "01/01/1969",
+            is_server: false,
           },
           {
             id: 4,
@@ -39,7 +42,8 @@ exports.seed = (knex) => {
             phone: "444-444-4444",
             email: "kziechmann@gmail.com",
             password: "password",
-            DOB: "01/01/1949"
+            DOB: "01/01/1949",
+            is_server: true,
           },
           {
             id: 5,
@@ -48,7 +52,8 @@ exports.seed = (knex) => {
             phone: "555-555-5555",
             email: "jmosher@gmail.com",
             password: "password",
-            DOB: "01/01/1849"
+            DOB: "01/01/1849",
+            is_server: true,
           }
         ]
       )
