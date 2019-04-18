@@ -36,7 +36,7 @@ router.patch('/:id', function (req, res, next) {
 
   return knex('drinks')
     .where({ id })
-    .update(
+    .update({
       liquor: req.body.liquor,
       price: req.body.price
     }, '*')
