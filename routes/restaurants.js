@@ -25,7 +25,8 @@ router.post('/', function (req, res, next) {
   return knex('restaurants')
     .insert({
       name: req.body.name,
-      location: req.body.location
+      location: req.body.location,
+      address: req.body.address,
     }, '*')
     .then(restaurant => res.status(200).json(restaurant[0]))
 })
@@ -38,7 +39,8 @@ router.patch('/:id', function (req, res, next) {
     .where({ id })
     .update({
       name: req.body.name,
-      location: req.body.location
+      location: req.body.location,
+      address: req.body.address,
     }, '*')
     .then(restaurant => res.status(200).json(restaurant[0]))
 

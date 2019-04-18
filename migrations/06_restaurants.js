@@ -3,6 +3,7 @@ exports.up = function (knex, Promise) {
     table.increments('id').notNullable()
     table.string('name', 255).notNullable()
     table.string('location').notNullable().defaultTo('[0.00,0.00]')
+    table.string('address').notNullable()
   })
 }
 
