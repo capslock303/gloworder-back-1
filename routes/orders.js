@@ -21,8 +21,8 @@ router.get('/:id', function (req, res, next) {
 
 //Create (create one of the resource)
 router.post('/', async(req, res, next)=> {
-  if(!req.body){next({status:400, message:"Must includ order information."})}
-  if(!req.body.total){next({status:400, message:"Must includ a total."})}
+  if(!req.body){next({status:400, message:"Must include order information."})}
+  if(!req.body.total){next({status:400, message:"Must include a total."})}
   else if (!req.body.drinkOrder){next({status:400, message:"Must include a drink order."})}
   else if (!req.body.userId){next({status:400, message:"Order must be associated with a user."})}
 
