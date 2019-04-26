@@ -7,6 +7,7 @@ exports.up = function (knex, Promise) {
     table.string('email', 100).notNullable()
     table.string('password', 255).notNullable()
     table.date('DOB').notNullable()
+    table.boolean('is_server').notNullable().defaultTo('false')
     table.timestamps(true, true)
   })
 }

@@ -5,7 +5,7 @@ const knex = require('../knex.js')
 
 //List (get all of the resource)
 router.get('/', function (req, res, next) {
-  knex('drink_options')
+  return knex('restaurants')
     .select('*')
     .then(data => res.status(200).json(data))
 })
@@ -13,35 +13,36 @@ router.get('/', function (req, res, next) {
 //Read (get one of the resource)
 router.get('/:id', function (req, res, next) {
   const id = req.params.id
-  return knex('drink_options')
+
+  return knex('restaurants')
     .first('*')
     .where({ id })
-    .then(options => res.status(200).json(options))
+    .then(restaurants => res.status(200).json(restaurants))
 })
 
 //Create (create one of the resource)
 router.post('/', function (req, res, next) {
-  return knex('drink_options')
+  return knex('restaurants')
     .insert({
-      drink_id: req.body.drinkId,
-      option_id: req.body.optionId,
-      price: req.body.price
+      name: req.body.name,
+      location: req.body.location,
+      address: req.body.address,
     }, '*')
-    .then(option => res.status(200).json(option[0]))
+    .then(restaurant => res.status(200).json(restaurant[0]))
 })
 
 //Update (update one of the resource)
 router.patch('/:id', function (req, res, next) {
   const id = req.params.id
 
-  return knex('drink_options')
+  return knex('restaurants')
     .where({ id })
     .update({
-      drink_id: req.body.drinkId,
-      option_id: req.body.optionId,
-      price: req.body.price
+      name: req.body.name,
+      location: req.body.location,
+      address: req.body.address,
     }, '*')
-    .then(option => res.status(200).json(option[0]))
+    .then(restaurant => res.status(200).json(restaurant[0]))
 
 })
 
@@ -49,10 +50,10 @@ router.patch('/:id', function (req, res, next) {
 router.delete('/:id', function (req, res, next) {
   const id = req.params.id
 
-  return knex('drink_options')
+  return knex('restaurants')
     .where({ id })
     .del('*')
-    .then(option => res.status(200).json(option[0]))
+    .then(restaurant => res.status(200).json(restaurant[0]))
 })
 
 module.exports = router;
