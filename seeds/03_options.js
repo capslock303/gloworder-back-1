@@ -29,6 +29,11 @@ exports.seed = (knex) => {
             id: 5,
             option: "Double",
             price: 3.0
+          },
+          {
+            id: 6,
+            option: "Shot",
+            price: 3.0
           }
         ]
       )
