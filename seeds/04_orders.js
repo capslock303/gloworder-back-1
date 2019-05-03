@@ -7,7 +7,7 @@ exports.seed = (knex) => {
         [
           {
             id: 1,
-            drink_order: { order: {
+            drink_order: { order: [{
             drink_id: 2,
             quantity: 2,
             option_id: 1,
@@ -15,7 +15,7 @@ exports.seed = (knex) => {
             name: "Jake",
             drink: "Whiskey",
             option: "On the rocks"
-            }},
+            }]},
             total: 7.0,
             paid: false,
             color: "blue",
@@ -47,7 +47,7 @@ exports.seed = (knex) => {
           },
           {
             id: 3,
-            drink_order: { order: {
+            drink_order: { order: [{
               drink_id: 2,
               quantity: 2,
               option_id: 1,
@@ -55,7 +55,7 @@ exports.seed = (knex) => {
               name: "Seth",
               drink: "Rum",
               option: "Neat"
-            }},
+            }]},
             total: 7.0,
             paid: false,
             color: "red",
