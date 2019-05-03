@@ -11,7 +11,7 @@ exports.seed = (knex) => {
             drink_id: 2,
             quantity: 2,
             option_id: 1,
-            barI: 3,
+            bar_id: 3,
             nam: "Jake",
             drin: "Whiskey",
             optio: "On the rocks"
@@ -27,7 +27,7 @@ exports.seed = (knex) => {
               drink_id: 3,
               quantity: 1,
               option_id: 5,
-              barId: 3,
+              bar_idd: 3,
               name: "Kevin",
               drink: "Tequila",
               option: "Double"
@@ -35,7 +35,7 @@ exports.seed = (knex) => {
                 drink_id: 5,
                 quantity: 1,
                 option_id: 1,
-                barId: 3,
+                bar_idd: 3,
                 name: "Katie",
                 drink: "Gin",
                 option: "On the Rocks"
@@ -51,7 +51,7 @@ exports.seed = (knex) => {
               drink_id: 2,
               quantity: 2,
               option_id: 1,
-              barId: 3,
+              bar_idd: 3,
               name: "Seth",
               drink: "Rum",
               option: "Neat"
@@ -67,7 +67,7 @@ exports.seed = (knex) => {
               drink_id: 1,
               quantity: 1,
               option_id: 4,
-              barId: 3,
+              bar_idd: 3,
               name: "Dustin",
               drink: "Vodka",
               option: "Dry"
@@ -75,7 +75,7 @@ exports.seed = (knex) => {
                 drink_id: 3,
                 quantity: 2,
                 option_id: 2,
-                barId: 3,
+                bar_idd: 3,
                 name: "Dustin",
                 drink: "Tequila",
                 option: "Neat"
